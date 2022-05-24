@@ -17,8 +17,7 @@
                     <div class="panel panel-dark-outline tabs-panel">
                         <div class="panel-heading">
                             <ul class="nav nav-tabs pull-left type-document">
-                                <li class="active"><a data-toggle="tab" href=".documents-panel" aria-expanded="true"> <i class="fa fa-file"></i> Documents</a></li>
-                                <li class=""><a data-toggle="tab" href=".images-panel" aria-expanded="false"><i class="fa fa-file-image-o"></i> Images </a></li>
+                                <li class="active"><a data-toggle="tab" href=".documents-panel" aria-expanded="true"> <i class="fa fa-file"></i> My Root</a></li>
                             </ul>
                             <div class="clear"></div>
                         </div>
@@ -31,73 +30,36 @@
                                 <a class="label label-dark label-left" href="#">Video</a>
                                 <div class="clear"></div>
                                 <div class="v-spacing-xs"></div>
-                                <h4 class="no-margin-top"> Folders</h4>
+                                <h4 class="no-margin-top"> Folders                                 <button><i class="glyphicon glyphicon-plus"></i></button></h4>
                                 <ul class="folders list-unstyled">
                                     <li> 
                                         <a href="#">
-                                            <i class="fa fa-folder"></i> Web projects
+                                            <i class="fa fa-folder"></i> Files
                                         </a>
                                     </li>
                                     <li> 
                                         <a href="#">
-                                            <i class="fa fa-folder"></i> Presentation files
+                                            <i class="fa fa-folder"></i> Photos
                                         </a>
                                     </li>
                                     <li> 
                                         <a href="#">
-                                            <i class="fa fa-folder"></i> Books
+                                            <i class="fa fa-folder"></i> Music
                                         </a>
                                     </li>
                                     <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Contest
-                                        </a>
                                     </li>
                                     <li> 
                                         <a href="#">
-                                            <i class="fa fa-folder"></i> Our Projects
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Our Music
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Messenger sounds
+                                            <i class="fa fa-folder"></i> Trash
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="v-spacing-xs"></div>
-                                <a class="btn btn-block btn-success"> <i class="fa fa-plus"> </i> Upload</a>
-                            </div>
-                            <div class="tab-pane images-panel">
-                             <h4 class="no-margin-top"> Folders</h4>
-                                <ul class="folders list-unstyled">
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> April meeting
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Application presentation
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Staff profile pictures
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Trip to Yosemite
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="v-spacing-xs"></div>
-                                <a class="btn btn-block btn-success"> <i class="fa fa-plus"> </i> Upload</a>
+                                <form action="upload.php" method="POST" enctype="multipart/form-data">
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <button type="submit" name="submit" class="fa fa-plus"></button>
+                                </form>
                             </div>
                         </div>
                     </div>
