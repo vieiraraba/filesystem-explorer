@@ -17,28 +17,30 @@ if (isset($_POST['submit'])) {
             $fileNameNew=uniqid('',true).".".$fileActualExt;
             $fileDestination = 'root/' .$fileNameNew;
 
-            $image = new stdClass();
-            $image ->name = $fileNameNew;
-            $image ->ext = $fileActualExt;
-            $image ->ext = $fileActualExt;
+            // $image = new stdClass();
+            // $image ->name = $fileNameNew;
+            // $image ->ext = $fileActualExt;
+            $image = array('name' => $fileNameNew);
+            // $imgJson = json_encode(array('data' => $image));
+            // file_put_contents("db.json", $imgJson);
             
-            /*
             if(filesize("db.json") == 0){
                 $first_record = array($image);
 
                 $data_to_save = $first_record;
-
-
-               $imgJson = json_encode(array('data' => $image));
-               file_put_contents("db.json", $imgJson);
             }else{
+                $old_records = json_decode(file_get_contents("db.json"));
+
+                array_push($old_records, $image);
+
+                $data_to_save = $old_records;
             }
 
-            if(!file_put_contents("db.json", json_encode($data_to_save){
-                //..
+            if(!file_put_contents("db.json", json_encode($data_to_save))){
+                $error = "Error storing file, try again";
+            }else{
+                $success = "File is stored successfully";
             }
-            */
-            
 
             move_uploaded_file($fileTmpName, $fileDestination);
             header('location: index.php');
