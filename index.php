@@ -7,6 +7,7 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>

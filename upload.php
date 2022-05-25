@@ -16,7 +16,13 @@ if (isset($_POST['submit'])) {
         if ($fileError === 0){
             $fileNameNew=uniqid('',true).".".$fileActualExt;
             $fileDestination = 'root/' .$fileNameNew;
+
+            $image = array('name' => $fileNameNew, 'ext' => $fileActualExt);
+            $imgJson = json_encode($image);
+            echo $imgJson;
+
             move_uploaded_file($fileTmpName, $fileDestination);
+            header('location: index.php');
         } else {
             echo "There was an error uploading your file!";
         }
