@@ -65,8 +65,16 @@
                         </div>
                     </div>
                 </div>
+                
+                <div id="parent">
+                </div>
+
                 <div class="col-sm-8 tab-content no-bg no-border">
                     <div class="tab-pane active documents documents-panel">
+                        <div class="document success">
+                            <div class="document-body" id="parent">
+                            </div>
+                        </div>
                         <div class="document success">
                             <div class="document-body">
                                 <i class="fa fa-file-excel-o text-success"></i>
