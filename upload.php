@@ -15,12 +15,16 @@ if (isset($_POST['submit'])) {
     if (in_array($fileActualExt, $allowed)){
         if ($fileError === 0){
             $fileNameNew=uniqid('',true).".".$fileActualExt;
-            $fileDestination = 'root/' .$fileNameNew;
+            $fileDestination = 'root/' .$fileNameNew; # add fileDir
 
             // $image = new stdClass();
             // $image ->name = $fileNameNew;
             // $image ->ext = $fileActualExt;
-            $image = array('name' => $fileNameNew);
+            $image = array(
+                'name' => $fileNameNew,
+                'ext' => $fileActualExt,
+                #'root' => $fileDir
+            );
             // $imgJson = json_encode(array('data' => $image));
             // file_put_contents("db.json", $imgJson);
             
@@ -36,7 +40,7 @@ if (isset($_POST['submit'])) {
                 $data_to_save = $old_records;
             }
 
-            if(!file_put_contents("db.json", json_encode($data_to_save))){
+            if(!file_put_contents("db.json", json_encode($data_to_save, JSON_PRETTY_PRINT))){
                 $error = "Error storing file, try again";
             }else{
                 $success = "File is stored successfully";

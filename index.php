@@ -31,7 +31,8 @@
                                 <a class="label label-dark label-left" href="#">Video</a>
                                 <div class="clear"></div>
                                 <div class="v-spacing-xs"></div>
-                                <h4 class="no-margin-top"> Folders                                 <button><i class="glyphicon glyphicon-plus"></i></button></h4>
+                                <h4 class="no-margin-top"> Folders
+                                    <button><i class="glyphicon glyphicon-plus"></i></button></h4>
                                 <ul class="folders list-unstyled">
                                     <li> 
                                         <a href="#">
@@ -80,7 +81,7 @@
                                 <i class="fa fa-file-excel-o text-success"></i>
                             </div>
                             <div class="document-footer">
-                                <span class="document-name"> Excel database 2017 </span>
+                                <span class="document-name"><a href="./root/Learn JavaScript_ Scope Cheatsheet _ Codecademy.pdf" target="_blank">Excel database 2017</a>  </span>
                                 <span class="document-description"> 1.2 MB </span>
                             </div>
                         </div>
