@@ -1,15 +1,14 @@
 <?php
-    #$folderName = $_POST['folder'];
+if($_POST){
+    $folderName = $_POST['folderName'];
 
-    if(getcwd() != 'root/'){
-    chdir('root/');
-    $folder = mkdir('Files', 0777, true);
-        if($folder){
-            echo "Created successfully";
-        }else{
-            echo "Already created";
-        }
-    echo 'ok';
-    }else{
-        echo "couldn't create it";
+    $newFolder = "./root/".$folderName;
+
+    echo $newFolder;
+
+    if(!is_dir($newFolder)){
+        mkdir($newFolder, 0777, true);
     }
+
+    header('location: index.php');
+}

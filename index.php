@@ -1,221 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Filesystem Explorer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="./assets/js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Manager</title>
+
+	<link rel="shortcut icon" href="./assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/21aa03ab11.js" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="./assets/js/script.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="panel panel-dark-outline tabs-panel">
-                        <div class="panel-heading">
-                            <ul class="nav nav-tabs pull-left type-document">
-                                <li class="active"><a data-toggle="tab" href=".documents-panel" aria-expanded="true"> <i class="fa fa-file"></i> My Root</a></li>
-                            </ul>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="panel-body tab-content">
-                            <div class="tab-pane active documents-panel">
-                                <a class="label label-success  label-left" href="#">Excel</a>
-                                <a class="label label-info label-left" href="#">Word</a> 
-                                <a class="label label-warning label-left" href="#">Powerpoint</a>
-                                <a class="label label-danger label-left" href="#">PDF</a>
-                                <a class="label label-dark label-left" href="#">Video</a>
-                                <div class="clear"></div>
-                                <div class="v-spacing-xs"></div>
-                                <h4 class="no-margin-top"> Folders
-                                    <button><i class="glyphicon glyphicon-plus"></i></button></h4>
-                                <ul class="folders list-unstyled">
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Files
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Photos
-                                        </a>
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Music
-                                        </a>
-                                    </li>
-                                    <li> 
-                                    </li>
-                                    <li> 
-                                        <a href="#">
-                                            <i class="fa fa-folder"></i> Trash
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="v-spacing-xs"></div>
-                                <form action="upload.php" method="POST" enctype="multipart/form-data">
-                                <input type="file" name="fileToUpload" id="fileToUpload">
-                                <button type="submit" name="submit" class="fa fa-plus"></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="parent">
-                </div>
+  <body>
 
-                <div class="col-sm-8 tab-content no-bg no-border">
-                    <div class="tab-pane active documents documents-panel">
-                        <div class="document success">
-                            <div class="document-body" id="parent">
-                            </div>
-                        </div>
-                        <div class="document success">
-                            <div class="document-body">
-                                <i class="fa fa-file-excel-o text-success"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"><a href="./root/Learn JavaScript_ Scope Cheatsheet _ Codecademy.pdf" target="_blank">Excel database 2017</a>  </span>
-                                <span class="document-description"> 1.2 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <i class="fa fa-file-excel-o text-success"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Excel database 2016 </span>
-                                <span class="document-description"> 1.1 MB </span>
-                            </div>
-                        </div>
-                        <div class="document info">
-                            <div class="document-body">
-                                <i class="fa fa-file-word-o text-info"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Word file 2017 </span>
-                                <span class="document-description"> 932 KB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <i class="fa fa-file-word-o text-info"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Word file 2016 </span>
-                                <span class="document-description"> 426 MB </span>
-                            </div>
-                        </div>
-                        <div class="document warning">
-                            <div class="document-body">
-                                <i class="fa fa-file-powerpoint-o text-warning"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Presentation 2017 </span>
-                                <span class="document-description"> 2.7 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <i class="fa fa-file-powerpoint-o text-warning"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Presentation 2016 </span>
-                                <span class="document-description"> 1.9 MB </span>
-                            </div>
-                        </div>
-                        <div class="document danger">
-                            <div class="document-body">
-                                <i class="fa fa-file-pdf-o text-danger"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> PDF file 2017 </span>
-                                <span class="document-description"> 5.3 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <i class="fa fa-file-pdf-o text-danger"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> PDF file 2016 </span>
-                                <span class="document-description"> 4.4 MB </span>
-                            </div>
-                        </div>
-                        <div class="document dark">
-                            <div class="document-body">
-                                <i class="fa fa-file-video-o text-dark"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name text-dark"> Video file 2017 </span>
-                                <span class="document-description"> 18.2 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <i class="fa fa-file-video-o text-dark"></i>
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Video file 2016 </span>
-                                <span class="document-description"> 23.7 MB </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane documents images-panel">
-                        <div class="document">
-                            <div class="document-body">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Forest.png </span>
-                                <span class="document-description"> 1.2 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Developer.png </span>
-                                <span class="document-description"> 2.5 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Meeting.png </span>
-                                <span class="document-description"> 1.1 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png">
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Hiking.png </span>
-                                <span class="document-description"> 3.5 MB </span>
-                            </div>
-                        </div>
-                        <div class="document">
-                            <div class="document-body">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
-                            </div>
-                            <div class="document-footer">
-                                <span class="document-name"> Developers meeting.png </span>
-                                <span class="document-description"> 862 KB </span>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-</body>
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<div class="page-header">
+				<h1>
+					My files
+				</h1>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<div class="row">
+				<div class="col-md-12" style="margin-bottom: 10px">
+					<a id="modal-348939" href="#modal-container-348939" role="button" style="margin-bottom: 10px" class="btn btn-outline-success btn-block" data-toggle="modal">
+						ADD A FILE</a>
+				
+					<div class="modal fade" id="modal-container-348939" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<form action="upload.php" method="POST" enctype="multipart/form-data">
+									<div class="modal-header">
+										<h5 class="modal-title" id="myModalLabel">
+											Upload file
+										</h5> 
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true"></span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<input type="file" name="fileToUpload" id="fileToUpload">
+									</div>
+									<div class="modal-footer">
+										
+										<button type="submit" name="submit" class="btn btn-primary">
+											Save changes
+										</button> 
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">
+											Close
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-outline-success btn-block"  style="margin-bottom: 10px" data-toggle="modal" data-target="#exampleModal">
+					ADD A FOLDER
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<form action="dir.php" method="POST" enctype="multipart/form-data">
+									<div class="modal-header">
+										<h5 class="modal-title" id="myModalLabel">
+											New folder
+										</h5> 
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true"></span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<input type="text" name="folderName" id="fileToUpload">
+									</div>
+									<div class="modal-footer">
+										
+										<button type="submit" name="submit" class="btn btn-primary">
+											Save changes
+										</button> 
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">
+											Close
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						</div>
+				</div>
+			</div>
+			
+
+			<div class="row">
+				<div class="col-md-12">
+					<ul id="folderList" class="nav flex-column nav-pills">
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="#"><i class="fa-solid fa-folder"></i> Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fa-solid fa-folder"></i> Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"><i class="fa-solid fa-folder"></i> Messages</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<div class="col-md-10">
+			<div id="card" class="row">
+				
+			<!-- inject files through js -->
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+ </body>
 </html>
